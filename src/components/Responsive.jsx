@@ -1,11 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
-import React from "react";
 import { Link } from "react-router-dom";
 
-const Responsive = ({ open }) => {
+const Responsive = ({ open, setOpen }) => {
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
   return (
     <AnimatePresence mode="wait">
-      {open &&  (
+      {open && (
         <motion.div
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
@@ -13,12 +15,17 @@ const Responsive = ({ open }) => {
           transition={{ duration: 0.3 }}
           className="absolute top-20 right-0 w-40 h-screen z-70"
         >
-          <div
-            className="text-xl font-semibold bg-sky-600 text-white rounded-xl  flex flex-col justify-center items-center  mr-3  py-3">
+          <div className="text-xl font-semibold bg-sky-600 text-white rounded-xl  flex flex-col justify-center items-center  mr-3  py-3">
             <ul className="  ">
-              <li><Link to="/about" >About</Link> </li>
-              <li><Link to="/experience">Projects</Link> </li>
-              <li><Link to="/contactus">Contact us</Link> </li>
+              <li>
+                <Link to="/about"   onClick={handleLinkClick}>About</Link>{" "}
+              </li>
+              <li>
+                <Link to="/experience"  onClick={handleLinkClick}>Projects</Link>{" "}
+              </li>
+              <li>
+                <Link to="/contactus"  onClick={handleLinkClick}>Contact us</Link>{" "}
+              </li>
             </ul>
           </div>
         </motion.div>

@@ -21,7 +21,7 @@ function Navigation() {
       <section
         
       >
-        <div className="  h-14 w-full flex justify-between items-center py-10  px-7 fixed top-0   bg-black shadow-md z-50 ">
+        <div className="  h-14 w-full flex justify-between items-center py-10  px-10 fixed top-0   bg-black shadow-md z-50 ">
           {/* Logo Section */}
           <div className=" hidden md:flex">
             <Link to="/"   onClick={handleHomeClick} className={ activeLink === "" ? "" : ""}>
@@ -84,22 +84,23 @@ function Navigation() {
           </div>
 
           {/* Mobile hamburgrm section */}
-          <div className="md:hidden sm:hidden " onClick={() => setOpen(!open)}>
-            <div className="flex  gap-31">
+          <div className="md:hidden sm:hidden ">
+            <div className="flex  gap-17">
               <Link to="/">
                 <div className="flex  justify-evenly">
-                  <h1 className="h-13 w-13 font- bg-sky-600 rounded-full pl-2 pt-2 font- text-2xl mt-2 mr-1  ">
+                  <h1 className="h-13 w-13 font- bg-sky-600 rounded-full pl-2 pt-2  text-2xl mt-2 mr-1  ">
                     AH
                   </h1>
                   <h1 className=" my-5  mx- text-xl font-bold">Ali Hassan</h1>
                 </div>
               </Link>
-              <HiMenuAlt3 className="text-4xl mt-4" />
+              <HiMenuAlt3 className="text-4xl mt-4"  onClick={() => setOpen(!open)} />
             </div>
           </div>
 
           {/*Mobile sidebar section */}
-          <Responsive open={open} />
+        <Responsive open={open} setOpen={setOpen} />
+         
         </div>
       </section>
     </>

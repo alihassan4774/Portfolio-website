@@ -57,7 +57,7 @@ const About = () => {
               variants={SlideUp(0.6)}
               initial="hidden"
               whileInView="visible"
-              className=" w-85 lg:w-250 h-100 lg:h-50 py-5 px-3 lg:mt-5 lg:ml-30 grid  grid-cols-3 lg:grid-cols-7 gap-4 lg:gap-5 "
+              className=" w-85 lg:w-250 h-100 lg:h-40 py-5 px-3 lg:mt-5 lg:ml-30 grid  grid-cols-3 lg:grid-cols-7 gap-4 lg:gap-5 "
             >
               <div>
                 <img
