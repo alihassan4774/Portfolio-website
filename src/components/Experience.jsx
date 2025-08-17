@@ -10,36 +10,39 @@ const Experience = () => {
         className=" h-auto w-full flex flex-col justify-center items-center  gap-5 pt-40  "
       >
         {/* Heading Section */}
-        <div className="flex flex-col gap-2 ">
-          <motion.div
-            variants={SlideRight(0.6)}
-            initial="hidden"
-            animate="visible"
-            className="text-lg font-medium text-gray-400 pt-5"
-          >
-            MY Work
-          </motion.div>
-          <motion.h1
-            variants={SlideRight(0.6)}
-            initial="hidden"
-            animate="visible"
-            className="text-4xl lg:text-7xl font-extrabold text-white"
-          >
-            Projects.
-          </motion.h1>
-          <motion.p
-            variants={SlideLeft(0.6)}
-            initial="hidden"
-            animate="visible"
-            className="text-lg font-medium text-gray-400 pt-5 max-w-4xl"
-          >
-            Following projects showcase my skills and experience through
-            real-world examples of my work. Each project is briefly described
-            with links to code repositories and live demos. It reflects my
-            ability to solve complex problems, work with different technologies,
-            and manage projects effectively.
-          </motion.p>
-        </div>
+      <div className="flex flex-col justify-center items-center gap-2 w-full max-w-6xl mx-auto px-4">
+  <motion.div
+    variants={SlideRight(0.6)}
+    initial="hidden"
+    animate="visible"
+    className="text-base sm:text-lg font-medium text-gray-400 pt-3 sm:pt-5 text-center"
+  >
+    MY Work
+  </motion.div>
+
+  <motion.h1
+    variants={SlideRight(0.6)}
+    initial="hidden"
+    animate="visible"
+    className="text-3xl sm:text-4xl lg:text-7xl font-extrabold text-white text-center"
+  >
+    Projects.
+  </motion.h1>
+
+  <motion.p
+    variants={SlideLeft(0.6)}
+    initial="hidden"
+    animate="visible"
+    className="text-sm sm:text-base md:text-lg font-medium text-gray-400 pt-3 sm:pt-5 text-center max-w-2xl md:max-w-4xl"
+  >
+    Following projects showcase my skills and experience through real-world
+    examples of my work. Each project is briefly described with links to code
+    repositories and live demos. It reflects my ability to solve complex
+    problems, work with different technologies, and manage projects
+    effectively.
+  </motion.p>
+</div>
+
 
         {/* Projects Section */}
         <div className="w-full flex flex-col  justify-center items-center  pt-40 px-5 lg:px-">
