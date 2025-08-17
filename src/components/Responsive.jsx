@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Responsive = ({ open, setOpen }) => {
   const handleLinkClick = () => {
     setOpen(false);
   };
+
   return (
     <AnimatePresence mode="wait">
       {open && (
@@ -15,16 +16,40 @@ const Responsive = ({ open, setOpen }) => {
           transition={{ duration: 0.3 }}
           className="absolute top-20 right-0 w-40 h-screen z-70"
         >
-          <div className="text-xl font-semibold bg-sky-600 text-white rounded-xl  flex flex-col justify-center items-center  mr-3  py-3">
-            <ul className="  ">
+          <div className="text-xl font-semibold bg-sky-600 text-white rounded-xl flex flex-col justify-center items-center mr-3 py-3">
+            <ul className="space-y-4">
               <li>
-                <Link to="/about"   onClick={handleLinkClick}>About</Link>{" "}
+                <Link
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={handleLinkClick}
+                >
+                  About
+                </Link>
               </li>
               <li>
-                <Link to="/experience"  onClick={handleLinkClick}>Projects</Link>{" "}
+                <Link
+                  to="experience"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={handleLinkClick}
+                >
+                  Projects
+                </Link>
               </li>
               <li>
-                <Link to="/contactus"  onClick={handleLinkClick}>Contact us</Link>{" "}
+                <Link
+                  to="contactus"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={handleLinkClick}
+                >
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
