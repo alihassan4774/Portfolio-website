@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SlideLeft, SlideRight } from "./Animation";
+import { User, Mail, MessageSquare } from "lucide-react"; // icons
 
 const Contactus = () => {
   const onSubmit = async (event) => {
@@ -10,15 +11,13 @@ const Contactus = () => {
     const email = formData.get("email")?.trim();
     const message = formData.get("message")?.trim();
 
-    // ✅ Basic form validation
     if (!name || !email || !message) {
-      alert("Oops! Something went wrong. All fields are required.");
+      alert("⚠️ Please fill all fields.");
       return;
     }
 
     formData.append("access_key", "58e3ee85-c56c-4364-a31e-fab60ae0422a");
- 
-    const object = Object.fromEntries(formData);    
+    const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
     try {
@@ -32,67 +31,98 @@ const Contactus = () => {
       }).then((res) => res.json());
 
       if (res.success) {
-        alert("Message sent successfully!");
+        alert("✅ Message sent successfully!");
+        event.target.reset();
       } else {
-        alert("Oops! Something went wrong.");
+        alert("❌ Something went wrong.");
       }
     } catch (error) {
-      alert("Oops! Something went wrong.");
+      alert("❌ Something went wrong.");
     }
   };
+
   return (
-    <div className="relative top-20 left-7 lg:left-20">
-      <div className="h-170">
-        {/* <div className="text-lg font-medium text-gray-400">GET TO TOUCH</div> */}
+    <div
+      id="contactus"
+      className="px-6 lg:px-20 py-20 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950"
+    >
+      <div className="max-w-5xl mx-auto text-center">
+        {/* Heading */}
         <motion.h1
           variants={SlideRight(0.6)}
           initial="hidden"
-          animate ="visible"
-          className="lg:text-6xl text-4xl font-extrabold text-white"
+          animate="visible"
+          className="lg:text-6xl text-4xl font-extrabold "
         >
-          Contact.
+          Contact Me
         </motion.h1>
+        <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+          I’d love to hear from you! Fill out the form below and I’ll get back
+          to you as soon as possible.
+        </p>
+
+        {/* Form Box */}
         <motion.div
           variants={SlideLeft(0.6)}
           initial="hidden"
-          animate ="visible"
-          className="h-108 lg:h-120 lg:w-150 w-83  lg:ml-20 mt-5 rounded-xl bg-gray-900 p-5"
+          animate="visible"
+          className="lg:w-[600px] w-full mx-auto mt-12 rounded-2xl bg-gray-900/70 backdrop-blur-xl shadow-[0_0_40px_rgba(56,189,248,0.3)] border border-sky-600/30 p-8"
         >
-          <form onSubmit={onSubmit} className="flex flex-col">
-            <label className="text-lg font-medium text-gray-400">
-              Full Name
-            </label>
-            <input
-              name="name"
-              className=" bg-sky-900 mt-1 text-white text-[18px] px-7 focus:bg-sky-900 focus:outline-none focus:ring-0mt-2 p-3 border-none rounded-xl hover:border-2 hover:border-sky-400"
-              type="text"
-              placeholder="What's your name?"
-            />
-            <br />
-            <label className="text-lg font-medium text-gray-400">
-              Email Address
-            </label>
-            <input
-              name="email"
-              className="bg-sky-900 mt-1 text-white  text-[18px] px-7 p-3 rounded-xl focus:bg-sky-900 focus:outline-none focus:ring-0"
-              type="email"
-               placeholder="What's your email address?"
-            />
-            <br />
-            <label className="text-lg font-medium text-gray-400">
-              Your Message
-            </label>
-            <textarea
-              name="message"
-              className="bg-sky-900 mt-1 text-white  text-[18px] px-7                                           p-3 rounded-xl focus:bg-sky-900 focus:outline-none focus:ring-0"
-               placeholder="What you want to say?"
-            ></textarea>
-            <button
+          <form onSubmit={onSubmit} className="flex flex-col gap-6">
+            {/* Name */}
+            <div className="relative">
+              <User className="absolute left-4 top-3 text-sky-400" size={22} />
+              <input
+                name="name"
+                className="w-full pl-12 bg-gray-800/70 text-white text-lg px-5 py-3 rounded-xl 
+                border border-transparent focus:border-sky-500 
+                focus:outline-none focus:ring-2 focus:ring-sky-500 
+                transition-all duration-300 focus:scale-[1.02]"
+                type="text"
+                placeholder="Your Name"
+              />
+            </div>
+
+            {/* Email */}
+            <div className="relative">
+              <Mail className="absolute left-4 top-3 text-sky-400" size={22} />
+              <input
+                name="email"
+                className="w-full pl-12 bg-gray-800/70 text-white text-lg px-5 py-3 rounded-xl 
+                border border-transparent focus:border-sky-500 
+                focus:outline-none focus:ring-2 focus:ring-sky-500 
+                transition-all duration-300 focus:scale-[1.02]"
+                type="email"
+                placeholder="Your Email"
+              />
+            </div>
+
+            {/* Message */}
+            <div className="relative">
+              <MessageSquare className="absolute left-4 top-3 text-sky-400" size={22} />
+              <textarea
+                name="message"
+                className="w-full pl-12 bg-gray-800/70 text-white text-lg px-5 py-3 rounded-xl h-32 resize-none 
+                border border-transparent focus:border-sky-500 
+                focus:outline-none focus:ring-2 focus:ring-sky-500 
+                transition-all duration-300 focus:scale-[1.02]"
+                placeholder="Write your message..."
+              ></textarea>
+            </div>
+
+            {/* Button */}
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 25px rgba(56,189,248,0.8)",
+              }}
+              whileTap={{ scale: 0.95 }}
               type="submit"
-              className="text-lg font-medium text-gray-400 bg-sky-900 h-10 w-25 mt-8 rounded-xl transition-all duration-500 hover:bg-sky-700"
+              className="text-lg font-semibold text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 py-3 rounded-xl 
+              transition-all duration-500 hover:from-sky-400 hover:to-indigo-500"
             >
-              Send
-            </button>
+               Send Message
+            </motion.button>
           </form>
         </motion.div>
       </div>
