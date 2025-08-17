@@ -58,7 +58,7 @@ function Navigation() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
-          <nav className="flex gap-6 text-sky-100 text-lg">
+          <nav className="flex gap-6 text-sky-100 text-lg list-none">
             <li className="hover:border-b-2 hover:border-sky-300 cursor-pointer hover:text-sky-300">
               <ScrollLink
                 to="about"
