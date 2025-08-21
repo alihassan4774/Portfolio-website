@@ -10,39 +10,38 @@ const Experience = () => {
         className=" h-auto w-full flex flex-col justify-center items-center  gap-5 pt-40  "
       >
         {/* Heading Section */}
-      <div className="flex flex-col justify-center items-center gap-2 w-full max-w-6xl mx-auto px-4">
-  <motion.div
-    variants={SlideRight(0.6)}
-    initial="hidden"
-    animate="visible"
-    className="text-base sm:text-lg font-medium text-gray-400 pt-3 sm:pt-5 text-center"
-  >
-    MY Work
-  </motion.div>
+        <div className="flex flex-col justify-center items-center gap-2 w-full max-w-6xl mx-auto px-4">
+          <motion.div
+            variants={SlideRight(0.6)}
+            initial="hidden"
+            animate="visible"
+            className="text-base sm:text-lg font-medium text-gray-400 pt-3 sm:pt-5 text-center"
+          >
+            MY Work
+          </motion.div>
 
-  <motion.h1
-    variants={SlideRight(0.6)}
-    initial="hidden"
-    animate="visible"
-    className="text-3xl sm:text-4xl lg:text-7xl font-extrabold text-white text-center"
-  >
-    Projects.
-  </motion.h1>
+          <motion.h1
+            variants={SlideRight(0.6)}
+            initial="hidden"
+            animate="visible"
+            className="text-3xl sm:text-4xl lg:text-7xl font-extrabold text-white text-center"
+          >
+            Projects.
+          </motion.h1>
 
-  <motion.p
-    variants={SlideLeft(0.6)}
-    initial="hidden"
-    animate="visible"
-    className="text-sm sm:text-base md:text-lg font-medium text-gray-400 pt-3 sm:pt-5 text-center max-w-2xl md:max-w-4xl"
-  >
-    Following projects showcase my skills and experience through real-world
-    examples of my work. Each project is briefly described with links to code
-    repositories and live demos. It reflects my ability to solve complex
-    problems, work with different technologies, and manage projects
-    effectively.
-  </motion.p>
-</div>
-
+          <motion.p
+            variants={SlideLeft(0.6)}
+            initial="hidden"
+            animate="visible"
+            className="text-md lg:text-lg w-85 lg:w-200 font-medium text-gray-400"
+          >
+            Following projects showcase my skills and experience through
+            real-world examples of my work. Each project is briefly described
+            with links to code repositories and live demos. It reflects my
+            ability to solve complex problems, work with different technologies,
+            and manage projects effectively.
+          </motion.p>
+        </div>
 
         {/* Projects Section */}
         <div className="w-full flex flex-col  justify-center items-center  pt-40 px-5 lg:px-">
@@ -76,12 +75,24 @@ const Experience = () => {
                 <span className="text-green-600 text-md lg:text-lg">
                   #tailwind css
                 </span>
-                <a href="https://my-dice-game-123.netlify.app/">
-                  <button className="text-md font-medium text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 py-2 px-4 rounded-full
-              transition-all duration-500 hover:from-sky-400 hover:to-indigo-500">
-                    Preview Live
-                  </button>
-                </a>
+                <motion.a
+                  href="
+https://my-dice-game-123.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{
+                    scale: 1.1,
+                    filter: "brightness(1)",
+                    boxShadow: "0 0 28px rgba(56,189,248,0.8)",
+                  }}
+                  whileTap={{ scale: 1 }}
+                  className="text-sm md:text-md font-medium text-white 
+                             bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 
+                             py-2 px-4 rounded-full 
+                             transition-all duration-500 hover:from-sky-400 hover:to-indigo-500"
+                >
+                  Preview Live
+                </motion.a>
               </div>
             </motion.div>
 
@@ -116,12 +127,25 @@ const Experience = () => {
                 <span className="text-green-600 text-md lg:text-lg">
                   #tailwind css
                 </span>
-                <a href="https://firebase-contact-update.netlify.app/">
-                  <button className="ctext-md font-medium text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 py-2 px-4 rounded-full
-              transition-all duration-500 hover:from-sky-400 hover:to-indigo-500">
-                    Preview Live
-                  </button>
-                </a>
+                <motion.a
+                  href="
+
+https://firebase-contact-update.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{
+                    scale: 1.1,
+                    filter: "brightness(1)",
+                    boxShadow: "0 0 28px rgba(56,189,248,0.8)",
+                  }}
+                  whileTap={{ scale: 1 }}
+                  className="text-sm md:text-md font-medium text-white 
+                             bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 
+                             py-2 px-4 rounded-full 
+                             transition-all duration-500 hover:from-sky-400 hover:to-indigo-500"
+                >
+                  Preview Live
+                </motion.a>
               </div>
             </motion.div>
 
@@ -137,7 +161,7 @@ const Experience = () => {
                 src="eatry.png"
                 alt=""
               />
-              <a href="https://github.com/alihassan4774/Dices-Game">
+              <a href="https://github.com/alihassan4774/Eatrey-cake">
                 <FaGithub className="absolute top-6 right-5 text-sky-400 h-8 w-10 z-50" />
               </a>
               <h1 className="text-[27px] lg:text-3xl font-bold pr-4">
@@ -152,12 +176,27 @@ const Experience = () => {
                 <span className="text-green-600 text-md lg:text-lg">
                   #tailwind css
                 </span>
-                <a href="https://eatery-cake.netlify.app/">
-                  <button className="text-md font-medium text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 py-2 px-4 rounded-full 
-              transition-all duration-500 hover:from-sky-400 hover:to-indigo-500">
-                    Preview Live
-                  </button>
-                </a>
+                <motion.a
+                  href="
+
+
+
+https://eatery-cake.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{
+                    scale: 1.1,
+                    filter: "brightness(1)",
+                    boxShadow: "0 0 28px rgba(56,189,248,0.8)",
+                  }}
+                  whileTap={{ scale: 1 }}
+                  className="text-sm md:text-md font-medium text-white 
+                             bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 
+                             py-2 px-4 rounded-full 
+                             transition-all duration-500 hover:from-sky-400 hover:to-indigo-500"
+                >
+                  Preview Live
+                </motion.a>
               </div>
             </motion.div>
           </div>

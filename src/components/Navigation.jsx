@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { HiMenuAlt3 } from "react-icons/hi";
 import Responsive from "./Responsive";
+import { motion } from "framer-motion";
 
 function Navigation() {
   const [activeLink, setActiveLink] = useState("");
@@ -37,7 +38,7 @@ function Navigation() {
         className={`h-16 flex justify-between items-center px-4 md:px-10 fixed top-0 z-50 transition-all duration-500
         ${
           isScrolled
-            ? "bg-transparent border-2 border-sky-400 rounded-full backdrop-blur-md mx-4 md:mx-12 w-[calc(100%-2rem)] md:w-[calc(100%-6rem)]"
+            ? "bg-transparent border-2 border-sky-600 rounded-full backdrop-blur-md mx-4 my-6 md:mx-12 w-[calc(100%-2rem)] md:w-[calc(100%-6rem)]"
             : "bg-black shadow-md w-full border-2 border-transparent"
         }`}
       >
@@ -45,7 +46,10 @@ function Navigation() {
         <div className="flex items-center gap-2">
           <ScrollLink to="home" smooth duration={500} onClick={handleHomeClick}>
             <div className="flex items-center gap-2">
-              <h1 className="text-md font-medium text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 py-1 px-2 rounded-full transition-all duration-500 hover:from-sky-400 hover:to-indigo-500">
+              <h1
+                className="text-lg  font-medium text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 
+          p-2 rounded-full transition-all duration-500 hover:from-sky-400 hover:to-indigo-500"
+              >
                 AH
               </h1>
               <h1 className="text-lg md:text-2xl font-bold">
@@ -92,14 +96,23 @@ function Navigation() {
           </nav>
 
           {/* Get Started Button */}
-          <a
+          <motion.a
             href="https://wa.me/923244774074"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm md:text-md font-medium text-white bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 py-2 px-4 rounded-lg transition-all duration-500 hover:from-sky-400 hover:to-indigo-500"
+            whileHover={{
+              scale: 1.05,
+              filter: "brightness(1)",
+              boxShadow: "0 0 28px rgba(56,189,248,0.8)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="text-sm md:text-md font-medium text-white 
+             bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 
+             py-2 px-4 rounded-lg 
+             transition-all duration-500 hover:from-sky-400 hover:to-indigo-500"
           >
             Get Started
-          </a>
+          </motion.a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -111,7 +124,11 @@ function Navigation() {
         </div>
 
         {/* Mobile Sidebar */}
-        <Responsive open={open} setOpen={setOpen} handleLinkClick={handleLinkClick} />
+        <Responsive
+          open={open}
+          setOpen={setOpen}
+          handleLinkClick={handleLinkClick}
+        />
       </div>
     </section>
   );
