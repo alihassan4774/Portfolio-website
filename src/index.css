@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
-body{
-   color: white;
-  background-color:black;
+body {
+  color: white;
+  background-color: black;
+  overflow-x: hidden;
+  padding-right: 0 !important;
 }
-.active{
+
+.active {
   color: skyblue;
 }
